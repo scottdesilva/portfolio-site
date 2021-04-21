@@ -1,0 +1,300 @@
+/* Custom properties */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: 'Roboto Slab', serif;
+    --ff-secondary: 'Roboto Mono', serif;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16efff;
+
+    --fs-h1:    3rem;
+    --fs-h2:    2.25rem;
+    --fs-h3:    1.25rem;
+    --fs-body:  1rem;
+
+    --bs:   0.25em 0.25em 0.75em rgba(0,0,0,.25),
+            0.125rem 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General Properties */
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+	padding: 4em 2em 3em;
+}
+
+footer {
+	background-color: var(--clr-dark);
+	text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+:focus {
+	outline: 1.5px solid var(--clr-accent);
+	outline-offset: 3px;
+}
+
+/* Typography */
+
+h1,h2,h3 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+/* Buttons */
+
+.btn {
+	display: inline-block;
+	padding: .5em 2.5em;
+	background: var(--clr-accent);
+	color: var(--clr-dark);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: .8rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: var(--fw-bold);
+	transition: tranform 200ms ease-in-out;
+}
+
+.btn:hover {
+	transform: scale(1.1);
+}
+
+.section-title {
+    margin-bottom: .25em;
+}
+
+.section-title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section-title--intro strong {
+    display: block;
+}
+
+.section-subtitle {
+    margin: 0 auto;
+    font-size: var(--fs-h3)
+}
+
+.section-subtitle--intro,
+.section-subtitle--about {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    /* margin-bottom: 1em; */
+}
+
+/* header */
+nav { display: none; }
+
+/* Intro section */
+.intro {
+    position: relative;
+}
+
+.intro-img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro-img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+    }
+
+    .section-subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+/* Skills section */
+.my-skills {
+	background-color: var(--clr-dark);
+	background-image:	url(../assets/pexels-suzy-hazelwood-2382325.jpg);
+	background-size: cover;
+	background-blend-mode:	soft-light;
+	color:	var(--clr-light);
+	text-align: center;
+}
+
+.section-title--skills {
+	color:	var(--clr-accent);
+	position: relative;
+}
+
+.section-title--skills::after {
+	content: '';
+	display: block;
+	width: 3em;
+	height: 2px;
+	margin: 0.5em auto 1em;
+	background: currentColor;
+	opacity: 0.5;
+}
+
+.skills {
+	margin-bottom: 4em;
+}
+
+.skill {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+	.skills {
+		display: flex;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.skill + .skill {
+		margin-left: 2em;
+	}
+}
+
+/* About Me section */
+.about-me {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.about-img {
+	box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+	.about-me {
+			display: grid;
+			grid-template-columns: 1fr 200px;
+			grid-gap: 2em;
+			grid-template-areas:
+					"title img"
+					"subtitle img"
+					"body img";
+	}
+
+	.about-img {
+			grid-area: img;
+			position: relative;
+	}
+
+	.section-subtitle--about {
+			grid-area: title;
+	}
+
+	.section-subtitle--about {
+			grid-column: 1/ -1;
+			grid-row: 2;
+			position: relative;
+			left: -2em;
+			width: calc(100% + 4em);
+			padding-left: 2em;
+			padding-right: calc(200px + 4em);
+	}
+}
+
+/* Projects section */
+.my-projects {
+	background-color: var(--clr-accent);
+	background-image:	url(../assets/pexels-suzy-hazelwood-2382325.jpg);
+	background-size: cover;
+	background-blend-mode:	soft-light;
+	color:	var(--clr-dark);
+	text-align: center;	
+}
+
+.project {
+	max-width: 600px;
+	margin: 0 2em 1em;
+}
+
+.project-tags {
+	color: var(--clr-dark);
+	font-family: var(--ff-secondary);
+	margin-top: 0;
+}
+
+@media (min-width: 800px) {
+	.projects {
+		display:	flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+/* Footer */
+.social-list {
+	margin: auto;
+	padding: 0;
+}
+
+.social-list-item {
+	margin: 0 auto;
+	display: inline-block;
+	padding: 2em 1em;
+}
+
+.made-by-tag {
+	color: var(--clr-light);
+	font-family: var(--ff-secondary);
+	margin-top: 0;
+}
