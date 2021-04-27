@@ -1,0 +1,403 @@
+/* Custom properties */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: 'Roboto Slab', serif;
+    --ff-secondary: 'Roboto Mono', serif;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16efff;
+
+    --fs-h1:    3rem;
+    --fs-h2:    2.25rem;
+    --fs-h3:    1.25rem;
+    --fs-body:  1rem;
+
+    --bs:   0.25em 0.25em 0.75em rgba(0,0,0,.25),
+            0.125rem 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General Properties */
+html {
+	scroll-behavior: smooth;
+}
+
+header {
+	background-color: var(--clr-accent);
+	padding: 1em;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	color: var(--clr-light);
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+	padding: 4em 2em 3em;
+}
+
+footer {
+	background-color: var(--clr-dark);
+	text-align: center;
+	font-size: var(--fs-h3);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+:focus {
+	outline-offset: 3px;
+}
+
+/* Typography */
+
+h1,h2,h3 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+/* Buttons */
+
+.btn {
+	display: inline-block;
+	padding: .5em 2.5em;
+	background: var(--clr-accent);
+	color: var(--clr-dark);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: .8rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: var(--fw-bold);
+	transition: tranform 200ms ease-in-out;
+}
+
+.btn:hover{
+	transform: scale(1.1);
+}
+
+.btn:focus {
+	outline: 1.5px solid var(--clr-accent);
+}
+
+.section-title {
+    margin-bottom: .25em;
+}
+
+.section-title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section-title--intro strong {
+    display: block;
+}
+
+.section-subtitle {
+    margin: 0 auto;
+    font-size: var(--fs-h3)
+}
+
+.section-subtitle--intro,
+.section-subtitle--about {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+		color: var(--clr-dark)
+}
+
+/* header */
+nav { 
+	position: fixed;
+	background: var(--clr-dark);
+	color: var(--clr-light);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+
+	transform: translateX(100%);
+	transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-list {
+	margin: 0;
+	list-style: none;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0;
+}
+
+.nav-link {
+
+	color: inherit;
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-h2);
+	text-decoration: none;
+}
+
+.nav-link:hover {
+	color: var(--clr-accent);
+}
+
+.nav-toggle {
+	background: transparent;
+	color: var(--clr-light);
+	border: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 3em;
+	/* top: 3em; */
+	z-index: 1000;
+	transition: tranform 200ms ease-in-out;
+
+}
+
+.nav-toggle:hover {
+	/* color: var(--clr-dark); */
+	transform: scale(1.1);
+}
+
+.nav-open nav{
+	transform: translateX(0);
+}
+
+.nav-open .nav-toggle{
+	position: fixed;
+}
+
+/* Intro section */
+.intro {
+    position: relative;
+		justify-content: center;
+		background-color: var(--clr-dark);
+		color: var(--clr-light)
+
+}
+
+.intro-img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .intro {
+
+        display: grid;
+        /* width: min-content; */
+        margin: 0 auto;
+        grid-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro-img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+    }
+
+    .section-subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+/* Skills section */
+.my-skills {
+	background-color: var(--clr-dark);
+	background-image:	url(../assets/pexels-suzy-hazelwood-2382325.jpg);
+	background-size: cover;
+	background-blend-mode:	soft-light;
+	color:	var(--clr-light);
+	text-align: center;
+}
+
+.section-title--skills {
+	color:	var(--clr-accent);
+	position: relative;
+}
+
+.section-title--skills::after {
+	content: '';
+	display: block;
+	width: 3em;
+	height: 2px;
+	margin: 0.5em auto 1em;
+	background: currentColor;
+	opacity: 0.5;
+}
+
+.skills {
+	margin-bottom: 4em;
+}
+
+.skill {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+	.skills {
+		display: flex;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.skill + .skill {
+		margin-left: 2em;
+	}
+}
+
+/* About Me section */
+.about-me {
+	margin: 0 auto;
+	max-width: 1000px;
+	/* background-color: var(--clr-light); */
+	/* color: var(--clr-accent); */
+}
+
+.about-img {
+	box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+	.about-me {
+			display: grid;
+			grid-template-columns: 1fr 200px;
+			grid-gap: 2em;
+			grid-template-areas:
+					"title img"
+					"subtitle img"
+					"body img";
+	}
+
+	.about-img {
+			grid-area: img;
+			position: relative;
+	}
+
+	.section-subtitle--about {
+			grid-area: title;
+	}
+
+	.section-subtitle--about {
+			grid-column: 1/ -1;
+			grid-row: 2;
+			position: relative;
+			left: -2em;
+			width: calc(100% + 4em);
+			padding-left: 2em;
+			padding-right: calc(200px + 4em);
+	}
+}
+
+/* Projects section */
+.my-projects {
+	background-color: var(--clr-accent);
+	background-image:	url(../assets/pexels-suzy-hazelwood-2382325.jpg);
+	background-size: cover;
+	background-blend-mode:	soft-light;
+	color:	var(--clr-dark);
+	text-align: center;	
+}
+
+.project {
+	max-width: 600px;
+	margin: 0 2em 1em;
+}
+
+.project-tags {
+	color: var(--clr-dark);
+	font-family: var(--ff-secondary);
+	margin-top: 0;
+}
+
+@media (min-width: 800px) {
+	.projects {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+/* Footer */
+.social-list {
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+.email-link {
+	margin: 0 auto;
+	display: block;
+	padding: 1em 0 0;
+	color: var(--clr-accent);
+}
+
+.social-list-item {
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.social-list-link {
+	color: inherit;
+	margin: 0 auto;
+	display: inline-block;
+	padding: 0 1em;
+	color: var(--clr-accent);
+}
+
+.made-by-tag {
+	color: var(--clr-accent);
+	font-size: var(--fs-body);
+	margin: 0;
+	padding-bottom: 1em;
+}
+ /* look into implementing cool animations(like hover, focus animations), ribbon that says get in contact */
+/*  try to look into setting a fixed nav bar tot op of screen*/
