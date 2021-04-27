@@ -183,9 +183,9 @@ nav {
 	color: var(--clr-light);
 	border: 0;
 	cursor: pointer;
-	/* position: absolute;
-	right: 1em;
-	top: 1em; */
+	position: absolute;
+	right: 3em;
+	/* top: 3em; */
 	z-index: 1000;
 	transition: tranform 200ms ease-in-out;
 
@@ -194,6 +194,14 @@ nav {
 .nav-toggle:hover {
 	/* color: var(--clr-dark); */
 	transform: scale(1.1);
+}
+
+.nav-open nav{
+	transform: translateX(0);
+}
+
+.nav-open .nav-toggle{
+	position: fixed;
 }
 
 /* Intro section */
@@ -352,7 +360,7 @@ nav {
 
 @media (min-width: 800px) {
 	.projects {
-		display:	flex;
+		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
@@ -360,7 +368,8 @@ nav {
 
 /* Footer */
 .social-list {
-	margin: auto;
+	margin: 0;
+	margin-bottom: 1em;
 	padding: 0;
 }
 
@@ -380,7 +389,7 @@ nav {
 	color: inherit;
 	margin: 0 auto;
 	display: inline-block;
-	padding: 1em;
+	padding: 0 1em;
 	color: var(--clr-accent);
 }
 
@@ -390,6 +399,5 @@ nav {
 	margin: 0;
 	padding-bottom: 1em;
 }
-
-/* fix small stuff like hover, focus, maybe size of email font, navbar tyo expand on button click, look into implementing cool animations(like hover, focus animations), ribbon that says get in contact */
-/* figure out colors for nav toggle and nav screen, make sure nav toggle isn't finicky when scrolling; try to look into setting a fixed nav bar tot op of screen*/
+ /* look into implementing cool animations(like hover, focus animations), ribbon that says get in contact */
+/*  try to look into setting a fixed nav bar tot op of screen*/
