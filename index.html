@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Scott De Silva Portfolio</title>
-        
+        <link rel="head icon" href="assets/pfp.jpg">
+
         <link rel="stylesheet" href="css/style.css">
        
         <!-- Fonts -->
@@ -15,21 +17,19 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/brands.css" integrity="sha384-V5Z1KgRRJyY878qCx7+zUeTDm0FgjoYrbmSortFqRPGz+Ue6XDe4uIiMqB3tB/wd" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/fontawesome.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
 
-
-
     </head>
     <body class="body">
         <header>
-
+            <h2> LOGO </h2>
             <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
+                <i class="fas fa-bars fa-3x"></i>
             </button>
-            <nav class="nav">
+            <nav>
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
                     <li class="nav-item"><a href="#my-skills" class="nav-link">Skills</a></li>
                     <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
                 </ul>
             </nav>
         </header>
@@ -42,8 +42,19 @@
             <img src="assets/twilight.jpg" alt="intro pic" class="intro-img">
         </section>
 
+        <section class="about-me" id="about">
+            <h2 class="section-title section-title--about">About Me</h2>
+            <p class="section-subtitle section-subtitle--about">Developer looking for opportunities</p>
+            <div class="about-me-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero qui possimus, officiis unde optio sed ex neque debitis inventore, eius maiores cupiditate laudantium corrupti totam officia nam, nostrum ducimus illum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem consequatur omnis ea ex eaque aliquam, ipsa earum dolorem enim ullam cum, molestias molestiae corporis fuga, minus sunt qui sapiente?</p>
+            </div>
+
+            <img src="assets/download.jfif" alt="about me pic" class="about-img">
+        </section>
+
         <section class="my-skills" id="my-skills">
-            <h2 class="section-title section-title--skills">My Skills</h2>
+            <h2 class="section-title section-title--skills">Skills</h2>
             <div class="skills">
                 <div class="skill">
                     <h3>Java</h3>
@@ -61,20 +72,9 @@
 
             <a href="#projects" class="btn">My Projects</a>
         </section>
-
-        <section class="about-me" id="about">
-            <h2 class="section-title section-title--about">Who I am</h2>
-            <p class="section-subtitle section-subtitle--about">Developer looking for opportunities</p>
-            <div class="about-me-body">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero qui possimus, officiis unde optio sed ex neque debitis inventore, eius maiores cupiditate laudantium corrupti totam officia nam, nostrum ducimus illum?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem consequatur omnis ea ex eaque aliquam, ipsa earum dolorem enim ullam cum, molestias molestiae corporis fuga, minus sunt qui sapiente?</p>
-            </div>
-
-            <img src="assets/download.jfif" alt="about me pic" class="about-img">
-        </section>
         
         <section class="my-projects" id="projects">
-            <h2 class="section-title section-title--projects">What I do</h2>
+            <h2 class="section-title section-title--projects">Projects</h2>
             <div class="projects">
                 <div class="project">
                     <h3>Consultant Work</h3>
@@ -103,20 +103,18 @@
         </section>
 
         <footer class="footer">
+            <a class="email-link" href="mailto:scottds97@gmail.com">
+                scottds97@gmail.com
+            </a>
             <ul class="social-list">
                 <li class="social-list-item">
-                    <a class="social-list-link" href="mailto:scottds97@gmail.com">
-                        <i class="fas fa-envelope fa-2x"></i>
+                    <a class="social-list-link" href="https://www.linkedin.com/in/scott-de-silva/">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                 </li>
                 <li class="social-list-item">
-                    <a class="social-list-link" href="https://www.linkedin.com/in/scott-de-silva/">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-                <li class="social-list-item">
-                    <a class="social-list-link" href="https://www.linkedin.com/in/scott-de-silva/">
-                        <i class="fab fa-gitlab fa-2x"></i>
+                    <a class="social-list-link" href="https://gitlab.com/scotticus">
+                        <i class="fab fa-gitlab"></i>
                     </a>
                 </li>
             </ul>

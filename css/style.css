@@ -35,6 +35,19 @@
 }
 
 /* General Properties */
+html {
+	scroll-behavior: smooth;
+}
+
+header {
+	background-color: var(--clr-accent);
+	padding: 1em;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	color: var(--clr-light);
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -51,6 +64,7 @@ section {
 footer {
 	background-color: var(--clr-dark);
 	text-align: center;
+	font-size: var(--fs-h3);
 }
 
 img {
@@ -63,7 +77,6 @@ strong {
 }
 
 :focus {
-	outline: 1.5px solid var(--clr-accent);
 	outline-offset: 3px;
 }
 
@@ -94,8 +107,12 @@ h3 { font-size: var(--fs-h3) }
 	transition: tranform 200ms ease-in-out;
 }
 
-.btn:hover {
+.btn:hover{
 	transform: scale(1.1);
+}
+
+.btn:focus {
+	outline: 1.5px solid var(--clr-accent);
 }
 
 .section-title {
@@ -120,15 +137,72 @@ h3 { font-size: var(--fs-h3) }
     background: var(--clr-accent);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
-    /* margin-bottom: 1em; */
+		color: var(--clr-dark)
 }
 
 /* header */
-nav { display: none; }
+nav { 
+	position: fixed;
+	background: var(--clr-dark);
+	color: var(--clr-light);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+
+	transform: translateX(100%);
+	transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-list {
+	margin: 0;
+	list-style: none;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0;
+}
+
+.nav-link {
+
+	color: inherit;
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-h2);
+	text-decoration: none;
+}
+
+.nav-link:hover {
+	color: var(--clr-accent);
+}
+
+.nav-toggle {
+	background: transparent;
+	color: var(--clr-light);
+	border: 0;
+	cursor: pointer;
+	/* position: absolute;
+	right: 1em;
+	top: 1em; */
+	z-index: 1000;
+	transition: tranform 200ms ease-in-out;
+
+}
+
+.nav-toggle:hover {
+	/* color: var(--clr-dark); */
+	transform: scale(1.1);
+}
 
 /* Intro section */
 .intro {
     position: relative;
+		justify-content: center;
+		background-color: var(--clr-dark);
+		color: var(--clr-light)
+
 }
 
 .intro-img {
@@ -137,8 +211,9 @@ nav { display: none; }
 
 @media (min-width: 600px) {
     .intro {
+
         display: grid;
-        width: min-content;
+        /* width: min-content; */
         margin: 0 auto;
         grid-gap: 1em;
         grid-template-areas:
@@ -215,6 +290,8 @@ nav { display: none; }
 .about-me {
 	margin: 0 auto;
 	max-width: 1000px;
+	/* background-color: var(--clr-light); */
+	/* color: var(--clr-accent); */
 }
 
 .about-img {
@@ -287,14 +364,32 @@ nav { display: none; }
 	padding: 0;
 }
 
+.email-link {
+	margin: 0 auto;
+	display: block;
+	padding: 1em 0 0;
+	color: var(--clr-accent);
+}
+
 .social-list-item {
 	margin: 0 auto;
 	display: inline-block;
-	padding: 2em 1em;
+}
+
+.social-list-link {
+	color: inherit;
+	margin: 0 auto;
+	display: inline-block;
+	padding: 1em;
+	color: var(--clr-accent);
 }
 
 .made-by-tag {
-	color: var(--clr-light);
-	font-family: var(--ff-secondary);
-	margin-top: 0;
+	color: var(--clr-accent);
+	font-size: var(--fs-body);
+	margin: 0;
+	padding-bottom: 1em;
 }
+
+/* fix small stuff like hover, focus, maybe size of email font, navbar tyo expand on button click, look into implementing cool animations(like hover, focus animations), ribbon that says get in contact */
+/* figure out colors for nav toggle and nav screen, make sure nav toggle isn't finicky when scrolling; try to look into setting a fixed nav bar tot op of screen*/
