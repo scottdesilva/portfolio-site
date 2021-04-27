@@ -78,6 +78,7 @@ strong {
 
 :focus {
 	outline-offset: 3px;
+	outline: 0;
 }
 
 /* Typography */
