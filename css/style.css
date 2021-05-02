@@ -64,6 +64,7 @@ section {
 footer {
 	background-color: var(--clr-dark);
 	text-align: center;
+	margin: 0;
 }
 
 img {
@@ -365,9 +366,10 @@ nav {
 }
 
 .email-link {
-	display: block;
+	display: inline-block;
 	padding: 1em;
 	color: var(--clr-accent);
+	margin: auto 0;
 }
 
 .social-list-item {
