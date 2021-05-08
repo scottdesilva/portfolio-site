@@ -103,7 +103,7 @@ h3 { font-size: var(--fs-h3) }
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: var(--fw-bold);
-	transition: tranform 300ms ease-in-out;
+	/* transition: tranform 300ms ease-in-out; */
 }
 
 .btn:hover{
@@ -123,7 +123,7 @@ h3 { font-size: var(--fs-h3) }
 }
 
 .section-title--intro strong {
-    display: block;
+/*     display: block; */
 }
 
 .section-subtitle {
@@ -131,8 +131,7 @@ h3 { font-size: var(--fs-h3) }
     font-size: var(--fs-h3)
 }
 
-.section-subtitle--intro,
-.section-subtitle--about {
+.section-subtitle--intro {
     background: var(--clr-accent);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
@@ -279,8 +278,11 @@ nav {
 	transition: .3s;
 	border-radius: 5px;
 	padding: 2em;
-	border-color: white;
-	border-width: 2em;
+
+}
+
+.skill:hover{
+	transform: scale(1.1);
 }
 
 @media (min-width: 800px) {
@@ -298,23 +300,44 @@ nav {
 
 /* About Me section */
 .about-me {
-	margin: 0 auto;
-	max-width: 1000px;
+	background-color: var(--clr-light);
+	color:	var(--clr-dark);
+	text-align: center;	
+	margin-bottom: 2em;
+	/* padding-bottom: 6em; */
 }
 
 .about-img {
 	box-shadow: var(--bs);
 }
 
+.section-title--about {
+/* 	padding: 0; */
+	/* background: var(--clr-accent); */
+
+	color: var(--clr-dark);
+	display: inline-block;
+}
+
+.about-me-body {
+	margin: 0 auto;
+	background: var(--clr-dark);
+	color: var(--clr-accent);
+	border-radius: 5px;
+	padding: 1em;
+	max-width: 1000px;
+
+}
+
 @media (min-width: 600px) {
 	.about-me {
-			display: grid;
+			/* display: grid;
 			grid-template-columns: 1fr 200px;
 			grid-gap: 2em;
 			grid-template-areas:
 					"title img"
 					"subtitle img"
-					"body img";
+					"body img"; */
 	}
 
 	.about-img {
@@ -322,7 +345,7 @@ nav {
 			position: relative;
 	}
 
-	.section-subtitle--about {
+	/* .section-subtitle--about {
 			grid-area: title;
 	}
 
@@ -334,7 +357,7 @@ nav {
 			width: calc(100% + 4em);
 			padding-left: 2em;
 			padding-right: calc(200px + 4em);
-	}
+	} */
 }
 
 /* Projects section */
