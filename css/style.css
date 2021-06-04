@@ -139,8 +139,7 @@ h3 { font-size: var(--fs-h3) }
     padding: .25em 1em;
     font-family: var(--ff-secondary);
 		color: var(--clr-dark);
-		margin: 0 -3em;
-
+		margin: 0 -1.5em;
 }
 
 /* header */
@@ -252,7 +251,7 @@ nav {
         position: relative;
         /* left: -1.5em;
         width: calc(100% + 1.5em); */
-				margin: 0 -3em;
+				/* margin: 0 -3em; */
     }
 }
 
@@ -332,7 +331,7 @@ nav {
 	background: var(--clr-dark);
 	color: var(--clr-accent);
 	border-radius: 5px;
-	max-width: 750px;
+	max-width: 1000px;
 	display: block;
 	padding: 1em 1.5em;
 	margin-bottom: 3em;
